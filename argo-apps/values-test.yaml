@@ -1,0 +1,5 @@
+stage: test
+applications:
+  - name: springboot-hello-world
+    image:
+      tag: 20250424.093922.0

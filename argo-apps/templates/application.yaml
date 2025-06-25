@@ -1,0 +1,34 @@
+{{- $stage := .Values.stage }}
+{{- range $app := .Values.applications }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $stage }}-{{ $app.name }}
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: registry-1.docker.io/devstackhub
+    chart: dox-cli
+    targetRevision: 1.0.229-helm
+    helm:
+      parameters:
+        - name: image.repository
+          value: devstackhub/{{ $app.name }}
+        - name: service.name
+          value: {{ $app.name }}
+        - name: global.stage
+          value: {{ $stage }}
+      values: |
+        {{ $app | toYaml | nindent 8 }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ $stage }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+{{- end }}
