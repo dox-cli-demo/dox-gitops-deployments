@@ -1,4 +1,7 @@
 apiVersion: v2
 name: argo-apps
 version: 0.2.0
-description: Generates Argo CD Applications from values
+description: >
+  A Helm chart that dynamically generates multiple Argo CD Application resources
+  based on a list of application definitions provided in values.yaml.
+  Useful for managing and deploying a fleet of services via Argo CD in a consistent, templated way.

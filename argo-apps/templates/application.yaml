@@ -1,4 +1,6 @@
 {{- $stage := .Values.stage }}
+{{- $cluster := .Values.cluster }}
+{{- $namespace := .Values.namespace }}
 {{- range $app := .Values.applications }}
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -23,8 +25,8 @@ spec:
       values: |
         {{ $app | toYaml | nindent 8 }}
   destination:
-    server: https://kubernetes.default.svc
-    namespace: {{ $stage }}
+    server: {{ $cluster }}
+    namespace: {{ $namespace }}
   syncPolicy:
     automated:
       prune: true

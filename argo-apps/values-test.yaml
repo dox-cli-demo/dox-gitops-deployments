@@ -1,4 +1,6 @@
 stage: test
+namespace: test
+cluster: https://kubernetes.default.svc
 applications:
   - name: springboot-hello-world
     image:
