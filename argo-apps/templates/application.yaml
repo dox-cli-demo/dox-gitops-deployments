@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     repoURL: registry-1.docker.io/devstackhub
-    chart: dox-cli
-    targetRevision: 1.0.229-helm
+    chart: dox-devops-base
+    targetRevision: 1.0.2-helm
     helm:
       parameters:
         - name: image.repository
