@@ -10,4 +10,4 @@ applications:
       tag: 20250628.063247.0
   - name: job-orchestrator
     image:
-      tag: 20250711.103654.0
+      tag: 20250711.104718.0
