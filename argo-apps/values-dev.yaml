@@ -5,6 +5,4 @@ applications:
   - name: springboot-hello-world
     image:
       tag: 20250424.193641.0
-  - name: dox-demo-maven-springboot
-    image:
-      tag: 20250730.164125.0
+
