@@ -9,5 +9,7 @@ applications:
     image:
       tag: 20250731.152503.0
   - name: job-orchestrator
+    serviceAccount:
+      name: orchestrator-sa
     image:
-      tag: 20250819.111725.0
+      tag: 20250819.174734.0
