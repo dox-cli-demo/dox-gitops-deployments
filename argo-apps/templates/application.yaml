@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: registry-1.docker.io/devstackhub
-    chart: dox-devops-base
+    chart: dox-cli
     targetRevision: 1.0.36-helm
     helm:
       parameters:
