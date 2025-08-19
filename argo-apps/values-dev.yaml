@@ -8,3 +8,6 @@ applications:
   - name: dox-demo-maven-springboot
     image:
       tag: 20250731.152503.0
+  - name: job-orchestrator
+    image:
+      tag: 20250819.111725.0
