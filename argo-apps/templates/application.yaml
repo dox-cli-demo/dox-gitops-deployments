@@ -13,14 +13,14 @@ spec:
   source:
     repoURL: registry-1.docker.io/devstackhub
     chart: dox-cli
-    targetRevision: 1.0.36-helm
+    targetRevision: 1.0.38-helm
     helm:
       parameters:
         - name: image.repository
           value: devstackhub/{{ $app.name }}
         - name: service.name
           value: {{ $app.name }}
-        - name: global.stage
+        - name: deployment.stage
           value: {{ $stage }}
       values: |
         {{ $app | toYaml | nindent 8 }}
