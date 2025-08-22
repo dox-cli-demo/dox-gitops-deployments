@@ -3,15 +3,8 @@ namespace: dev
 cluster: https://kubernetes.default.svc
 applications:
   - name: springboot-hello-world
-    secret:
-      name: my-secret
-    pvc:
-      name: demo-pvc
-      mountPath: /data
     image:
-      tag: "22"
-    ingress:
-      host: deopsubdomain
+      tag: 20250424.093922.0
   - name: dox-demo-maven-springboot
     image:
       tag: 20250731.152503.0
